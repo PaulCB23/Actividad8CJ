@@ -12,6 +12,11 @@ public class Act8Java {
         Deck deck = new Deck();
         int opcion;
         String repetir;
+        
+         if (opcion > 4){
+                throw new Exception("Opcion no valida");
+            }
+            
         do{
             System.out.println("Juego de Poker \nBuena Suerte! \nEscoja una de las siguientes opciones:  ");
             System.out.println("1) Mezclar deck\n2) Sacar una carta\n3) Carta al azar \n4) Generar una mano de 5 cartas\n0) salir");
@@ -41,6 +46,10 @@ public class Act8Java {
             }System.out.println("Repetir el menu?\n si o no");
             repetir = lector.readLine();
         }while(repetir.equals("si"));
+        
+        if (deck == null){
+            throw new Exception("Se han agotado las cartas");
+        }
 
     }
 
